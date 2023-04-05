@@ -22,7 +22,7 @@ def instagram():
 
 Janela = Tk()
 Janela.title("automatizar insta e shorts")
-Janela.geometry("800x800")
+Janela.geometry("420x165")
 Texto = Label(Janela, text="Clique no Botão e rode o programa", bg="yellow", fg="red")
 Texto.grid(column=3,row=2)
 logo2 = PhotoImage(file="reels.png",width=180, height=100)
