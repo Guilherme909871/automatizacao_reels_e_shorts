@@ -27,11 +27,6 @@ Janela.title("automatizar insta e shorts")
 Janela.geometry("250x100")
 Texto = Label(Janela, text="Clique no Botão e rode o programa", fg='white', bg='#333333')
 Texto.grid(column=3,row=2)
-logo2 = PhotoImage(file="reels.png",width=180, height=100)
-
-
-logo = PhotoImage(file="shorts.png", width=180, height= 100)
-logo.subsample(3,3)
 
 var = IntVar()
 rb_youtube = Radiobutton(Janela, text="Executar função do YouTube", variable=var, value=1, font="arial")
