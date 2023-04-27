@@ -1,7 +1,9 @@
 import time
 import pyautogui
 from tkinter import*
+from tkinter import ttk
 import webbrowser
+import pygame
 
 def youtube():
     webbrowser.open("https://youtube.com")
@@ -19,26 +21,30 @@ def instagram():
     pyautogui.click(x=943, y=636)
 
 
-
 Janela = Tk()
+Janela.configure(bg='#333333')
 Janela.title("automatizar insta e shorts")
-Janela.geometry("420x165")
-Texto = Label(Janela, text="Clique no Botão e rode o programa", bg="yellow", fg="red")
+Janela.geometry("250x100")
+Texto = Label(Janela, text="Clique no Botão e rode o programa", fg='white', bg='#333333')
 Texto.grid(column=3,row=2)
 logo2 = PhotoImage(file="reels.png",width=180, height=100)
-botao = Button(Janela,image=logo2 ,command=lambda:instagram())
+
+
 logo = PhotoImage(file="shorts.png", width=180, height= 100)
 logo.subsample(3,3)
 
-botao.grid(column=3, row=4)
-botao2 = Button(Janela,image=logo, command=lambda:youtube())
-botao2.grid(column=4, row=4)
-def sair():
-    Janela.destroy()
-
-botao3 = Button(Janela,text="sair",command=lambda:sair())
-botao3.grid(column=9, row=9)
-
+var = IntVar()
+rb_youtube = Radiobutton(Janela, text="Executar função do YouTube", variable=var, value=1, font="arial")
+rb_youtube.grid(column=3, row=2)
+rb_instagram = Radiobutton(Janela, text="Executar função do Instagram", variable=var, value=2, font="arial")
+rb_instagram.grid(column=3, row=3)
+def executar():
+    if var.get() == 1:
+        youtube()
+    elif var.get() == 2:
+        instagram()
+botao_executar = Button(Janela, text="Executar", command=executar)
+botao_executar.grid(column=3, row=4)
 
 
 Janela.mainloop()
