@@ -34,10 +34,11 @@ rb_youtube.grid(column=3, row=2)
 rb_instagram = Radiobutton(Janela, text="Executar função do Instagram", variable=var, value=2, font="arial")
 rb_instagram.grid(column=3, row=3)
 def executar():
-    if var.get() == 1:
+    largura = Janela.winfo_screenwidth()
+    altura = Janela.winfo_screenheight()
+    if largura <= 1920 and altura <= 1080:
         youtube()
-    elif var.get() == 2:
-        instagram()
+    else: print("teste")
 botao_executar = Button(Janela, text="Executar", command=executar)
 botao_executar.grid(column=3, row=4)
 
